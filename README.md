@@ -1,2 +1,2 @@
-[README.md](https://github.com/mark88915/SER-project/files/7103727/README.md)
-# SER-project
+# 使用Heroku 部屬API
+此專題使用喜怒哀中四種情緒的語音資料集並以svm作為分類器。將模型儲存起來後使用Flask設置API介面提供輸入值的預測並在最後部屬到Heroku雲端伺服器平台中。
