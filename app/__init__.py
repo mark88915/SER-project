@@ -26,7 +26,11 @@ def postInput():
 
     if file.filename == "":
         return "no file"
-    
-    print(file.filename)
+    else:
+        print(file.filename)
 
-    return "Success123~"
+    emoFile = csv.reader(file)
+
+    print(emoFile)
+
+    return "Success"
