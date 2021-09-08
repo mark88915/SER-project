@@ -2,6 +2,7 @@
 
 import numpy as np
 import app.model as model
+import csv
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
