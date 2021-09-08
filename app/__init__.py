@@ -3,7 +3,6 @@
 import numpy as np
 import app.model as model
 import pandas as pd
-import csv
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -31,7 +30,7 @@ def postInput():
     else:
         print(file.filename)
 
-    emoFile = pd.DataFrame(csv.reader(file))
+    emoFile = pd.read_csv(file)
 
     print(emoFile)
 
