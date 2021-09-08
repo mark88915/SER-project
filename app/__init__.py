@@ -22,10 +22,11 @@ def postInput():
 
     return jsonify({'return':str(emoType)})'''
 
-    '''uploadedFile = request.files['file']
-    print(uploadedFile.filename)
+    file = request.files['file']
 
-    if uploadedFile.filename:
-        return "Success!"'''
+    if file.filename == "":
+        return "no file"
+    else:
+        print(file.filename)
 
-    return "S!"
+    return "Success123~"
