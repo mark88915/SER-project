@@ -11,7 +11,8 @@ CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def postInput():
-    insertValue = request.get_json()
+    
+    '''insertValue = request.get_json()
     f1 = insertValue['feature1']
     f2 = insertValue['feature2']
     f3 = insertValue['feature3']
@@ -19,4 +20,9 @@ def postInput():
 
     emoType = model.predict(input)
 
-    return jsonify({'return':str(emoType)})
+    return jsonify({'return':str(emoType)})'''
+
+    uploadedFile = request.files['file']
+    print(uploadedFile.filename)
+
+    return "success！"
