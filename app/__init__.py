@@ -2,6 +2,7 @@
 
 import numpy as np
 import app.model as model
+import pandas as pd
 import csv
 
 from flask import Flask, request, jsonify
@@ -30,7 +31,7 @@ def postInput():
     else:
         print(file.filename)
 
-    emoFile = csv.reader(file)
+    emoFile = pd.DataFrame(csv.reader(file))
 
     print(emoFile)
 
