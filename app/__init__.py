@@ -25,4 +25,7 @@ def postInput():
     uploadedFile = request.files['file']
     print(uploadedFile.filename)
 
-    return "success！"
+    if uploadedFile.filename:
+        return "Success!"
+
+    return "False!"
