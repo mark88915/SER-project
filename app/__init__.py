@@ -22,7 +22,6 @@ def postInput():
 
     return jsonify({'return':str(emoType)})'''
 
-    uploadedFile = request.files['file']
-    print(uploadedFile.filename)
+    
 
     return "success！"
