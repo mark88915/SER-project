@@ -26,7 +26,7 @@ def postInput():
 
     if file.filename == "":
         return "no file"
-    else:
-        print(file.filename)
+    
+    print(file.filename)
 
     return "Success123~"
