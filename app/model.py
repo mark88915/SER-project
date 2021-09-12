@@ -2,15 +2,27 @@
 
 import gzip
 import pickle
+import pandas as pd
+import numpy as np
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
 #載入model
 with gzip.open('app/model/svm-SER.pgz','r') as f:
     polyModel = pickle.load(f)
 
-def predict(input):
-    pred = polyModel.predict(input)[0]
-    print(pred)
-    return pred
+def predict(angryEmo, happyEmo, neutralEmo, sadEmo):
+    #以喜怒哀中四種情緒的標籤降維後下去進行預測
+    angryTag = polyModel.predict([angryEmo[-1]])[0]
+    happyTag = polyModel.predict([happyEmo[-1]])[0]
+    neutralTag = polyModel.predict([neutralEmo[-1]])[0]
+    sadTag = polyModel.predict([sadEmo[-1]])[0]
+
+    #以出現最多的情緒做結
+    predictEmoQuantity = [angryTag,happyTag,neutralTag,sadTag]
+    emoType = max(predictEmoQuantity,key = predictEmoQuantity.count)
+
+    print(emoType)
+    return emoType
 
 def dimensionalityReduction(emoFile):
     LDA = LinearDiscriminantAnalysis(n_components=3)
