@@ -28,7 +28,7 @@ def dimensionalityReduction(emoFile):
     LDA = LinearDiscriminantAnalysis(n_components=3)
 
     #匯入基準檔案
-    emotion = pd.read_csv("./emotion.csv")
+    emotion = pd.read_csv("app/model/emotion.csv")
 
     #編碼
     label_map = {'angry': 0, 'happy': 1, 'neutral': 2, 'sad': 3}
