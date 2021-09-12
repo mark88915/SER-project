@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import numpy as np
 import app.model as model
 import pandas as pd
 
@@ -13,16 +12,6 @@ CORS(app)
 @app.route('/predict', methods=['POST'])
 def postInput():
     
-    '''insertValue = request.get_json()
-    f1 = insertValue['feature1']
-    f2 = insertValue['feature2']
-    f3 = insertValue['feature3']
-    input = np.array([[f1, f2, f3]])
-
-    emoType = model.predict(input)
-
-    return jsonify({'return':str(emoType)})'''
-
     #請求檔案
     file = request.files['file']
 
